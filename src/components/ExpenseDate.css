@@ -1,0 +1,18 @@
+.date{
+    flex-direction: column;
+    padding: 0 0 1rem 0;
+}
+.datehead{
+    box-sizing: border-box;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    width: 100%;
+    padding:1rem;
+    margin:auto;
+    background-color:#0F0E0E ;
+    font-size: 1.5rem;
+}
+.dateval{
+    padding: 1rem;
+    font-size: 1rem;
+}

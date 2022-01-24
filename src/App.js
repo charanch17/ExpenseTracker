@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Card from "./components/card";
+import ExpenseForm from "./components/ExpenseForm";
+import Expenses from "./components/Expenses";
+import NewExpense from "./components/NewExpense";
+
 
 function App() {
+  const [expensesdata,setexpensesdata]=useState([
+    {key:1,date:new Date(),name:'fridge',price:'100'},
+    {key:2,date:new Date(),name:'Phone',price:'900'},
+    {key:3,date:new Date(),name:'washing machine',price:'1000'},
+    {key:4,date:new Date(),name:'house',price:'10000'},
+    {key:5,date:new Date(),name:'chair',price:'10000'}
+  ])
+  const dataHandler =(formdata)=>{
+    setexpensesdata((oldstate)=>{return [...oldstate,formdata]})
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewExpense dataHandler={dataHandler}></NewExpense>
+      <Expenses data={expensesdata}></Expenses>
     </div>
+
   );
 }
 

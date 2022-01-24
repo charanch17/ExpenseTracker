@@ -1,0 +1,26 @@
+.itemcard{
+    flex-direction: row;
+    background-color: #072227;
+    color: whitesmoke;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    /* max-height:10rem; */
+}
+@media screen and (max-width:460px) {
+    .itemcard{
+    flex-direction: column;
+    justify-content: center;
+    }
+    .expensename{
+        width: 100%;
+        text-align: center;
+    }
+
+    
+}
+.expensename{
+padding: 1rem;
+overflow: auto;
+}
