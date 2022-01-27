@@ -1,0 +1,12 @@
+.cardaligner{
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto 1rem;
+    background-color: #4A403A;
+}
+.btn{
+    padding:1rem;
+    font-weight: 800;
+    background-color: #BD4B4B;
+    color: whitesmoke;
+}

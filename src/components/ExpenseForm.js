@@ -1,3 +1,4 @@
+import { cleanup } from "@testing-library/react"
 import { useState } from "react"
 import Card from "./card"
 import './ExpenseForm.css'
@@ -16,19 +17,23 @@ const ExpenseForm = (props) => {
     const dateHandler = (event) => {
         setdate(event.target.value)
     }
-    const sendData = () => {
-        const data = {
-            name: name, price: price, date: new Date(date),key:Math.random()
-        }
-        props.dataHandler(data)
+    const clear = () => {
         setname('')
         setdate('')
         setprice('')
     }
+    const sendData = () => {
+        const data = {
+            name: name, price: price, date: new Date(date), key: Math.random()
+        }
+        console.log(data)
+        props.dataHandler(data)
+        clear()
+    }
     return (
         <>
             <Card className='form'>
-                <h1>New Expense</h1>
+                <h1 style={{ textAlign: 'center' }}> New Expense</h1>
                 <div className="form__element">
                     <label><h3 className="label" >Title</h3></label>
                     <input type='text' onChange={nameHandler} value={name} />
@@ -41,11 +46,12 @@ const ExpenseForm = (props) => {
                     <label><h3 className="label">Date</h3></label>
                     <input type='date' onChange={dateHandler} value={date} />
                 </div>
-                <div className="form__element">
-                    <button onClick={sendData}>
-                        <p>submit</p>
-                    </button>
-                </div>
+                <button onClick={sendData}>
+                    <p>submit</p>
+                </button>
+                <button onClick={() => { clear(); props.setFormVisibility((prev) => { return !prev }) }}><p>cancel</p></button>
+
+
             </Card>
         </>
     )

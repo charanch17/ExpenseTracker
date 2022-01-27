@@ -1,0 +1,8 @@
+.barbox{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+background-color: #f7f7f7;
+padding: 3rem;
+margin-bottom:1rem;
+}

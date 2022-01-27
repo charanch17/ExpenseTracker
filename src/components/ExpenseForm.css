@@ -1,12 +1,23 @@
 .form{
     flex-direction: column;
-
+    max-width: 100%;
+    background-color: #694E4E;
 }
 .label{
     margin: 0 1rem;
+    /* color: whitesmoke; */
 }
 .form__element{
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     margin: 1rem;
+    font-size: 1rem;
+    /* color:white */
+}
+@media  (max-width:380px) {
+    .form__element{
+        flex-direction: column;
+    }
+    
 }
